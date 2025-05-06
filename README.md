@@ -32,8 +32,7 @@ Here’s what your interactive bundle of joy should include:
 ### 3. Form Validation 📋✅  
 - Required field checks  
 - Email format validation  
-- Password rules (e.g., min 8 characters)  
-- Bonus: Real-time feedback while typing
+- Password rules (e.                                                                   while typing
 
 ---
 

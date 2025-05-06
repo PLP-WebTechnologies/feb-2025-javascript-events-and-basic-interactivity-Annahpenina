@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Save Trees in Africa</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    button:hover {
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+
+    .nav-list a:hover {
+      text-decoration: underline;
+      color: green;
+    }
+
+.fade-in {
+  animation: fadeIn ease 3s;
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.tab-content {
+  transition: opacity 0.5s ease-in-out;
+}
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 class="fade-in">Save Trees in Africa Campaign</h1>
+    <nav class="navbar">
+      <ul class="nav-list">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#join">Join Us</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+      <br /><br />
+      <img
+        src="https://media.istockphoto.com/id/535813987/photo/in-the-forest.jpg?s=612x612&w=0&k=20&c=keXhv-SHt77J_SDp_TYxNmVnhQSCNSC6rz4e4xdPDaQ="
+        width="750"
+        height="300"
+        alt="Save Trees"
+      />
+    </nav>
+  </header>
+
+  <div id="customAlert" class="alert-box">
+    <span class="close-btn" onclick="closeAlert()">&times;</span>
+    <strong>Join our campaign!</strong> Plant a tree, save a life. <a href="#join">Click here</a> to get started.
+  </div>
+
+  <main>
+    <section id="about">
+      <h2>About Us</h2>
+      <p id="awareness">
+        Deforestation is a major environmental issue that affects many regions around the world...
+    </p>
+      <button class="highlight-btn" onclick="highlightText()">Highlight</button>
+
+      <p id="help">
+        There are many ways you can get involved...
+      </p>
+      <button class="learn-btn" onclick="updateContent()">Learn More</button>
+
+      <!-- 🎁 Secret double-click action -->
+      <p ondblclick="revealSecret()">🌳 Double-click here to discover a green surprise!</p>
+    </section>
+    <section id="tabs">
+      <h3>Explore More</h3>
+      <div class="tab-buttons">
+        <button onclick="showTab('tab1')">Why Trees?</button>
+        <button onclick="showTab('tab2')">Our Vision</button>
+      </div>
+      <div id="tab1" class="tab-content">
+        <p>Trees are vital for clean air, water conservation, and biodiversity protection.</p>
+      </div>
+      <div id="tab2" class="tab-content" style="display:none;">
+        <p>We aim to plant 10 million trees across Africa by 2030 with your support.</p>
+      </div>
+    </section>
+    
+
+    <section>
+      <h2>Ways to Save Trees in Africa</h2>
+      <ul>
+        <li>Support conservation organizations</li>
+        <li>Participate in tree planting initiatives</li>
+        <li>Raise awareness about deforestation</li>
+        <li>Reduce paper and wood consumption</li>
+        <li>Advocate for sustainable land management practices</li>
+      </ul>
+    </section>
+
+    <section id="tree-stats">
+      <h2>Tree Planting Statistics</h2>
+      <img
+        src="https://media.istockphoto.com/id/1126962479/photo/hand-watering-young-plants-in-growing.jpg?s=612x612&w=0&k=20&c=FSep2mD1PAtnsVHv3xQ1OGmTR0NLiqcmKK18Xw2iAj8="
+        width="750"
+        height="300"
+        alt="Tree Planting"
+      />
+      <article>
+        <p>
+          In the past 5 years, we have successfully planted over 2 million trees...
+        </p>
+      </article>
+      <div class="stats-grid">
+        <div class="stat">
+          <h3>1.83B</h3>
+          <p style="color: #FB8262">Trees planted annually worldwide</p>
+        </div>
+        <div class="stat">
+          <h3>15.3B</h3>
+          <p style="color: #FB8262">Trees lost annually due to human activity</p>
+        </div>
+        <div class="stat">
+          <h3>1.7M+</h3>
+          <p style="color: #FB8262">Trees planted in Africa in 2023</p>
+        </div>
+        <div class="stat">
+          <h3>41,000 ha</h3>
+          <p style="color: #FB8262">Land restored by TREES project</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="join">
+      <h2>Join Our Movement</h2>
+      <form class="movement-form" action="#" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required placeholder="Enter your name"/><br /><br />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required placeholder="Enter your email"/><br /><br />
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required minlength="6"/><br /><br />
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required/><br /><br />
+
+        <label>Preferred Role:</label><br />
+        <input type="radio" id="volunteer" name="role" value="Volunteer" required />
+        <label for="volunteer">Volunteer</label>
+        <input type="radio" id="donor" name="role" value="Donor" />
+        <label for="donor">Donor</label><br /><br />
+
+        <label>Areas of Interest:</label><br />
+        <input type="checkbox" id="reforestation" name="interest[]" value="Reforestation" />
+        <label for="reforestation">Reforestation</label>
+        <input type="checkbox" id="education" name="interest[]" value="Education" />
+        <label for="education">Education</label><br /><br />
+
+        <label for="country">Country:</label>
+        <select id="country" name="country" required>
+          <option value="">Select your country</option>
+          <option value="Kenya">Kenya</option>
+          <option value="South Africa">South Africa</option>
+          <option value="Nigeria">Nigeria</option>
+          <option value="Algeria">Algeria</option>
+          <option value="Egypt">Egypt</option>
+          <option value="Angola">Angola</option>
+          <option value="Botswana">Botswana</option>
+          <option value="Ethiopia">Ethiopia</option>
+        </select><br /><br />
+
+        <button id="submitBtn" type="submit">Register</button>
+      </form>
+    </section>
+
+    <section id="slideshow">
+      <h3>Reforestation Highlights</h3>
+      <img id="slide" src="https://images.pexels.com/photos/6872269/pexels-photo-6872269.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+           width="600" height="300" alt="Slideshow Image" />
+    </section>
+    </section>
+  </main>
+
+  <footer>
+    <p style="color: #FDFFF6;">&copy; 2025 Save Trees Africa. All Rights Reserved.</p>
+    <p style="color: #FDFFF6;">Join us in our mission to protect Africa’s forests and restore our planet. Every tree counts! 🌿</p>
+    <p style="color: #FDFFF6;">Follow us:  
+      <a href="#">Facebook</a> |  
+      <a href="#">Twitter</a> |  
+      <a href="#">Instagram</a>
+    </p>
+    <p style="color: #FDFFF6;">Contact us: <a href="mailto:info@savetreesafrica.org">info@savetreesafrica.org</a></p>
+  </footer>
+
+  <script src="script.js">
+    function updateContent() {
+      document.getElementById("awareness").textContent =
+        "Forests in Africa are vanishing at an alarming rate. With your support, we can reverse this trend and restore nature’s balance";
+      document.getElementById("help").textContent =
+        "Your contributions help plant more trees, educate communities, and ensure long-term conservation. Join us and be part of a greener future!";
+    }
+
+    function highlightText() {
+      const p = document.getElementById("awareness");
+      p.style.backgroundColor = "yellow";
+      p.style.color = "darkgreen";
+      p.style.fontWeight = "bold";
+      p.style.border = "2px solid darkgreen";
+    }
+
+    function closeAlert() {
+      document.getElementById("customAlert").style.display = "none";
+    }
+  
+    document.addEventListener("keypress", function (event) {
+      if (event.key === "h") {
+        highlightText();
+        alert("You pressed 'h' – awareness text highlighted!");
+      }
+    });
+
+    const slides = [
+      "https://images.pexels.com/photos/6872269/pexels-photo-6872269.jpeg",
+      "https://images.pexels.com/photos/6964940/pexels-photo-6964940.jpeg",
+      "https://images.pexels.com/photos/15985749/pexels-photo-15985749.jpeg",
+      "images/pexels-veeterzy-38136.jpg",
+      "images/pexels-timmossholder-974314.jpg",
+      "images/pexels-reto-burkler-640438-1443867.jpg",
+      "images/pexels-pth686817-31885070.jpg",
+      "images/pexels-nc-farm-bureau-mark-2889442.jpg",
+      "images/pexels-nandhukumar-1065753.jpg",
+      "images/pexels-jakkel-418831.jpg"
+    ];
+
+    let currentSlide = 0;
+    const slideImg = document.getElementById("slide");
+
+    setInterval(() => {
+      slideImg.style.opacity = 0;
+      setTimeout(() => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        slideImg.src = slides[currentSlide];
+        slideImg.style.opacity = 1;
+      }, 500);
+     }, 3000);
+</script>
+</body>
+</html>
